@@ -1,0 +1,73 @@
+<!-- 
+Copyright (c) 2017-present, Red Brick Lane Marketing Solutions Pvt. Ltd.
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/> 
+-->
+
+<script type="text/ng-template" id="subChildren.html">
+	<div>
+		<input type="checkbox" checkbox-indeterminate="subChildren.isIndeterminate" ng-click="toggleChildSelections(subChildren)" ng-model="subChildren.isSelected" ng-model-options="{debounce : 100}">
+		<span ng-show=subChildren.children class="glyphicon glyphicon-chevron-right font_size_11px" ng-class="{'glyphicon-chevron-right': !subChildren.showSubLevels, 'glyphicon-chevron-down': subChildren.showSubLevels}" ng-click="toggleSubLevelOptions(subChildren)"></span>
+		<span>{{subChildren.name}}</span>
+		<div ng-show=subChildren.showSubLevels class="padding_l_18rem">
+			<div class="display_flex" ng-repeat="secondLevel in subChildren.children">
+				<div>
+					<input type="checkbox" ng-model="secondLevel.isSelected">
+				</div>
+				<div class="padding_l_3px">
+					<span>{{secondLevel.name}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<div class="row advanced-Multiselect">
+	<div class="col-xs-12">
+		<div>
+			<label class="control-label">{{label}}</label>
+			<input class='form-control advanced-Multiselect-input' type="text" ng-disabled="disableStatus=='true'" ng-model="multiselectFilter" placeholder="{{placeholder}}" ng-click="toggleOptions($event);">
+		</div>
+		<div ng-show="showOptions" class="multiselect-values">
+			<div>
+				<div>
+					<input type="checkbox" checkbox-indeterminate="model.isIndeterminate" ng-click="toggleSelectAll()" ng-model="isSelectAll">
+					<span class="advanced-Multiselect-selectAll" ng-click="toggleSelectAll(true)">
+						<u>SELECT ALL</u>
+					</span>
+				</div>
+				
+				<div ng-repeat="firstLevel in model">
+					<div>
+						<input type="checkbox" checkbox-indeterminate="firstLevel.isIndeterminate" ng-click="toggleChildSelections(firstLevel)" ng-model="firstLevel.isSelected" ng-model-options="{debounce : 100}">
+						<span ng-show=firstLevel.children class="glyphicon glyphicon-chevron-right font_size_11px" ng-class="{'glyphicon-chevron-right': !firstLevel.showSubLevels, 'glyphicon-chevron-down': firstLevel.showSubLevels}" ng-click="toggleSubLevelOptions(firstLevel)"></span>
+						<span>{{firstLevel.name}}</span>
+						<div ng-show=firstLevel.showSubLevels class="padding_l_18rem">
+							<div class="display_flex" ng-repeat="subChildren in firstLevel.children" ng-include="'subChildren.html'">
+								<div>
+									<input type="checkbox" ng-model="subChildren.isSelected">
+								</div>
+								<div class="padding_l_3px">
+									<span>{{secondLevel.name}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
