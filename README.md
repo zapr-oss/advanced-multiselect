@@ -17,6 +17,9 @@ Include the provided `advancedMultiselectDirective.js` and `advancedMultiselect.
 
 Include the module as a dependency - `advancedMultiselect`
 
+### Demo
+[Multiselect Demo Link](http://opensource.zapr.in/multiselect/)
+
 ### Usage
 Render the Advanced multiselect directive by using the following tag `<advanced-multiselect>`
 
