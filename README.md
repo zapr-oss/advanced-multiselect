@@ -38,3 +38,4 @@ Render the Advanced multiselect directive by using the following tag `<advanced-
 
 ### Contributing
 Issues and PR's are much appreciated. Please describe the issue clearly, with proper steps to reproduce the same, while raising any.
+For any other things, contact [opensource@zapr.in](opensource@zapr.in)
