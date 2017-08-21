@@ -27,13 +27,30 @@ grunt.initConfig({
 	            collapseBooleanAttributes: true
 	    }
 	  }
+	},
+
+	cssmin: {
+		options: {
+			//
+		},
+		compress: {
+			files: [{
+				expand: true,
+				cwd: 'advancedMultiselect/',
+				src: ['*.css', '!*.min.css'],
+				dest: "",
+				ext: ".min.css",
+				extDot: 'last'
+			}]
+		}
 	}
 
 });
 
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-angular-templates');
+grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-grunt.registerTask('default', ['uglify']);
+grunt.registerTask('default', ['ngtemplates', 'uglify', 'cssmin']);
 
 };
