@@ -1,12 +1,12 @@
 {
   "name": "advancedMultiselect",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "http://opensource.zapr.in/multiselect/",
   "description": "Advanced multiselect is an Angular module which multi-selects items which are in a hierarchical manner",
   "author": "opensource@zapr.in",
   "license": "GNU GPL",
   "main": [
-    "advancedMultiselectDirective.min.js",
+    "advancedMultiselectDirective.js",
     "advancedMultiselect.min.css"
   ],
   "repository": {

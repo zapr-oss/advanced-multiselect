@@ -1,10 +1,10 @@
 {
   "name": "advancedMultiselect",
   "author": "opensource@zapr.in",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Advanced multiselect is an Angular module which multi-selects items which are in a hierarchical manner",
   "homepage": "http://opensource.zapr.in/multiselect/",
-  "main": "advancedMultiselectDirective.min.js",
+  "main": "advancedMultiselectDirective.js",
   "keywords": [
     "angular",
     "multiselect"
@@ -13,6 +13,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-angular-templates": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-uglify": "^3.0.1"
   }
