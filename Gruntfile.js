@@ -8,9 +8,19 @@ grunt.initConfig({
 	uglify: {
 		my_target: {
 		  files: {
-		    'advancedMultiselectDirective.min.js': ['advancedMultiselect/advancedMultiselectDirective.js', 'templates.js']
+		    'advancedMultiselectDirective.min.js': ['advancedMultiselectDirective.js']
 		  }
 		}
+	},
+
+	concat: {
+	    options: {
+	      separator: ';',
+	    },
+	    dist: {
+	      src: ['advancedMultiselect/advancedMultiselectDirective.js', 'templates.js'],
+	      dest: 'advancedMultiselectDirective.js',
+	    },
 	},
 
 	ngtemplates: {
@@ -50,7 +60,8 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-angular-templates');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
+grunt.loadNpmTasks('grunt-contrib-concat');
 
-grunt.registerTask('default', ['ngtemplates', 'uglify', 'cssmin']);
+grunt.registerTask('default', ['ngtemplates', 'concat', 'uglify', 'cssmin']);
 
 };
